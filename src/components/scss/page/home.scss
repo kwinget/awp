@@ -1,0 +1,207 @@
+#slice-id-home-hero {
+  position: relative;
+  section {
+    .basic-slice-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 860px;
+      .section-content {
+        max-width: 560px;
+        margin: 0px;
+      }
+      h2 {
+        color: white;
+        font-size: 55px;
+        line-height: 55px;
+      }
+      p {
+        color: white;
+        font-size: 18px;
+        line-height: 22px;
+      }
+      a {
+        @include cta-button();
+      }
+    }
+  }
+}
+#slice-id-home-patner {
+  section {
+    padding: 75px 0px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    a {
+      @include cta-button();
+    }
+  }
+}
+#slice-id-home-growth {
+  .column {
+    .column-item {
+      overflow: visible;
+    }
+    align-items: center;
+    .block-img {
+      max-width: 500px;
+      background-color: rgba(35, 164, 85, 0.5);
+      padding: 25px 0px;
+      position: relative;
+      left: -65px;
+      img {
+        position: relative;
+        right: -65px;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+}
+#slice-id-cultivation-costs{
+  h2{
+    margin:0px;
+    @include mobile(){
+      margin-top:20px;
+    }
+  }
+  .left{
+    width:calc(48%)
+  }
+  .right{
+    width:calc(40%)
+  }
+  .left-image{
+    position:relative;
+    .left-shadow{
+      background-color: rgba(35, 164, 85, 0.5);
+      position:absolute;
+      height:380px;
+      top:-30px;
+      width:100%;
+    }
+    .gatsby-image-wrapper{
+      position: relative;
+      left: 65px;
+      height: auto;
+      display: block;
+    }
+  }
+
+}
+#slice-id-home-cost {
+  margin:100px 0px;
+  @include mobile(){
+    margin:50px 0px;
+    > div{
+      > div{
+        flex-direction:column-reverse;
+      }
+    }
+  }
+  h2{
+    margin:0px;
+    @include mobile(){
+      margin-top:20px;
+    }
+  }
+  .left{
+    width:calc(40%)
+  }
+  .right{
+    width:calc(48%)
+  }
+  .right-image{
+    .right-shadow{
+      background-color: rgba(35, 164, 85, 0.5);
+      position:absolute;
+      height:380px;
+      top:-30px;
+      width:100%;
+    }
+    // max-width: 500px;
+    // background-color: rgba(35, 164, 85, 0.5);
+    // padding: 25px 0px;
+    position: relative;
+    // right: -65px;
+    .gatsby-image-wrapper{
+      position: relative;
+      left: -65px;
+      height: auto;
+      display: block;
+    }
+  } 
+}
+#slice-id-home-partnership {
+  h2{
+    margin:0px;
+    @include mobile(){
+      margin-top:20px;
+    }
+  }
+  .left{
+    width:calc(48%)
+  }
+  .right{
+    width:calc(40%)
+  }
+  .left-image{
+    .left-shadow{
+      background-color: rgba(35, 164, 85, 0.5);
+      position:absolute;
+      height:380px;
+      top:-30px;
+      width:100%;
+    }
+    position: relative;
+    // right: -65px;
+    .gatsby-image-wrapper{
+      position: relative;
+      left: 65px;
+      height: auto;
+      display: block;
+    }
+  }
+}
+
+#slice-id-home-videeo {
+  section {
+    padding: 90px 0px;
+  }
+  .basic-slice-container {
+    max-width: 730px;
+  }
+  .embed > div {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+#slice-id-home-cta{
+  section {
+    padding: 75px 0px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    a {
+      @include cta-button();
+    }
+  }
+}
+
+#slice-id-home-insights{
+  padding:85px 0px;
+  h2.entity-section-header{
+    margin-top:0px;
+    width:100%;
+    text-align:center;
+    font-weight:500;
+  }
+}

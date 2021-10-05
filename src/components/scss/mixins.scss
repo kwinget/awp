@@ -1,0 +1,29 @@
+@mixin cta-button() {
+  background-color: $green;
+  color: white;
+  padding: 9px 20px;
+  border-radius: 10px;
+  font-size: 20px;
+  margin-top: 20px;
+  display: inline-block;
+  &:hover {
+    background: darken($green, 10%);
+  }
+}
+@mixin tablet {
+  @media only screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin mobilesmall {
+  @media only screen and (max-width: $mobile-width-small) {
+    @content;
+  }
+}

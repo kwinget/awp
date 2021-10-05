@@ -1,0 +1,189 @@
+#slice-id-about-thinkers{
+    padding:100px 0px;
+    text-align:center;
+    .section-content{
+        max-width:1000px;
+        margin:0 auto;
+        p{
+            font-size:18px;
+            line-height:27px;
+            font-weight:300;
+        }
+    }
+}
+#slice-id-about-our-team{
+    > div{
+        > div{
+ padding:120px 0px;
+        }
+    }
+   .column{
+       align-items:center;
+       max-width: 1000px;
+       margin: 0 auto;
+       @include mobile(){
+         flex-direction:column-reverse;
+       }
+       .column-item{
+        &:nth-child(1){
+            width:calc(65% - 50px);
+            @include mobile(){
+              width:100%;
+              text-align:center;
+            }
+        }
+        &:nth-child(2){
+            width:calc(35% - 50px);
+            @include mobile(){
+              margin:0px;
+              width:100%;
+              .block-img{
+                img{
+                  max-width:200px;
+                  margin:0 auto;
+                  display:block;
+                }
+              }
+            }
+        }
+           img{
+               height:auto;
+           }
+       }
+   }
+}
+#slice-id-about-seeds{
+    padding:80px 0px;
+    text-align:center;
+    .section-content{
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+}
+
+#slice-id-about-benefits{
+    .left{
+        .left-image-inner{
+            background-color:#239145;
+            img{
+                height:auto;
+            }
+        }
+    }
+}
+
+#slice-id-about-bottom-contact{
+    section {
+        padding: 0px 0px 50px 0px;
+        text-align: center;
+        max-width: 1000px;
+        margin: 0 auto;
+        a {
+          @include cta-button();
+        }
+      }
+}
+
+
+#slice-id-about-benefits{
+    padding-top:50px;
+    .left-image-inner{
+        img{
+            border-radius:10px;
+        }
+    }
+    .left{
+        width:calc(40% - 30px)
+      }
+      .right{
+        width:calc(55% - 30px)
+      }
+      .left-image{
+        position:relative;
+        .left-shadow{
+          background-color: rgba(35, 164, 85, 0.5);
+          position:absolute;
+          height:211px;
+          right:-50px;
+          width:100%;
+        }
+        .gatsby-image-wrapper{
+          position: relative;
+        //   right: 65px;
+          height: auto;
+          display: block;
+        }
+      }
+}
+
+#slice-id-about-medical{
+    padding:50px 0px;
+    @include mobile(){
+      > div{
+        > div{
+          flex-direction: column-reverse;
+        }
+      }
+    }
+    .left-image-inner{
+        img{
+            border-radius:10px;
+        }
+    }
+    .left{
+        width:calc(55% - 30px)
+      }
+      .right{
+        width:calc(40% - 30px)
+      }
+      .right-image{
+        position:relative;
+        .right-shadow{
+          background-color: rgba(35, 164, 85, 0.5);
+          position:absolute;
+          height:211px;
+          left:-50px;
+          width:100%;
+        }
+        .gatsby-image-wrapper{
+          position: relative;
+        //   right: 65px;
+          height: auto;
+          display: block;
+        }
+      }
+}
+
+#slice-id-about-recreational{
+    padding-top:50px;
+    @include mobile(){
+      padding-top:0px;
+    }
+    .left-image-inner{
+        img{
+            border-radius:10px;
+        }
+    }
+    .left{
+        width:calc(40% - 30px)
+      }
+      .right{
+        width:calc(55% - 30px)
+      }
+      .left-image{
+        position:relative;
+        .left-shadow{
+          background-color: rgba(35, 164, 85, 0.5);
+          position:absolute;
+          height:211px;
+          right:-50px;
+          width:100%;
+        }
+        .gatsby-image-wrapper{
+          position: relative;
+        //   right: 65px;
+          height: auto;
+          display: block;
+        }
+      }
+}
