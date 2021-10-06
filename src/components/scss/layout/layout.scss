@@ -1,17 +1,22 @@
 * {
   box-sizing: border-box;
   transition: 0.3s;
-  color: $dark-green;
+
 }
 body {
   margin: 0px;
-  font-family: "Roboto";
+  font-family: "Helvetica Neue";
   font-weight: 400;
-  font-size: 18px;
-  line-height: 27px;
+  font-size: 20px;
+  line-height: 25px;
+  color: $blue;
 }
 a {
   text-decoration: none;
+}
+.header{
+  background-image:url("../../../../static/images/NavBarBackgroundpng.png");
+
 }
 .blog-post-main p {
   a {
@@ -26,6 +31,7 @@ h4,
 h5,
 h6 {
   line-height: 1.2;
+  font-family:Georgia;
 }
 h1 {
   font-size: 48px;
@@ -58,14 +64,14 @@ h2 {
         }
         a {
           background-color: white;
-          color: $green;
+          color: $blue;
           padding: 9px 20px;
           border-radius: 10px;
           font-size: 20px;
           margin-top: 20px;
           display: inline-block;
           &:hover {
-            background: darken($green, 10%);
+            background: darken($blue, 10%);
           }
         }
       }

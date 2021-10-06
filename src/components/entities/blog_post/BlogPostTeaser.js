@@ -11,6 +11,11 @@ const BlogPostTeaserStyle = styled.article`
   padding: 15px;
   text-decoration: none;
   position: relative;
+  .blog-teaser{
+    p{
+      font-size:17px;
+    }
+  }
   .blog-teaser-title {
     display: block;
     h2 {
@@ -26,12 +31,30 @@ const BlogPostTeaserStyle = styled.article`
     font-weight: 300;
     margin-top: 10px;
   }
-  .blog-teaser-image {
+  .blog-teaser-image-container {
     margin-bottom: 20px;
+
+    .gatsby-image-wrapper{
+
+      &:before{
+        border-radius:5px;
+      }
+      &:after{
+        border-radius:5px;
+      }
+    }
+  }
+  .blog-teaser-title{
+    h2{
+      color:#1E3163;
+      font-size:20px;
+      line-height:27px;
+      font-weight:400;
+    }
   }
   .cta-button {
     font-size: 14px;
-    color: ${variable.blueCta};
+    color: #1E3163;
     position: absolute;
     bottom: 0px;
     left: 15px;

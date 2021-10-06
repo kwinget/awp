@@ -6,11 +6,10 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import * as variable from "../variables"
 import MobileMenu from "../mobileMenu"
-
 const HeaderStyle = styled.header`
   z-index: 2;
-  position: absolute;
   width: 100%;
+  background-size:cover;
   .header-social-container {
     padding: 18px 0px;
     @media (max-width: ${variable.tabletWidth}) {
@@ -31,12 +30,12 @@ const HeaderStyle = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 18px;
-    padding-bottom: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
   .logo {
-    max-width: 381px;
-    width: 381px;
+    max-width: 148px;
+    width: 148px;
     img {
       max-width: 100%;
     }
@@ -56,21 +55,37 @@ const HeaderStyle = styled.header`
       list-style: none;
       margin-right: 50px;
       position: relative;
+      &:nth-child(4){
+        a {
+          color: ${variable.blue};
+          border:2px solid ${variable.blue};
+          padding: 9px 20px;
+          border-radius: 5px;
+          &:hover {
+            background: ${variable.blue};
+            color: white !important;
+            border:2px solid rgba(255,255,255,0);
+
+          }
+        }
+      }
       &:last-child {
         margin-right: 0px;
         a {
-          background: white;
-          color: ${variable.green};
+          background: ${variable.blue};
+          color: white;
           padding: 9px 20px;
-          border-radius: 15px;
+          border-radius: 5px;
+          border:2px solid rgba(255,255,255,0);
           &:hover {
-            background: ${variable.green};
-            color: white !important;
+            background: white;
+            color: ${variable.blue} !important;
+            border:2px solid ${variable.blue};
           }
           &[aria-current] {
-            color: ${variable.green} !important;
+            color: ${variable.blue} !important;
             &:hover {
-              background: ${variable.green};
+              background: ${variable.blue};
               color: white !important;
             }
           }
@@ -78,11 +93,11 @@ const HeaderStyle = styled.header`
       }
       a {
         text-decoration: none;
-        color: white;
+        color: ${variable.blue};
         font-size: 20px;
         font-weight: bold;
         &:hover {
-          color: ${variable.green};
+          color: ${variable.blue};
         }
       }
       .sub-menu {
@@ -98,7 +113,7 @@ const HeaderStyle = styled.header`
         min-width: 145px;
         animation-duration: 4s;
         a {
-          color: white;
+          color: ${variable.blue};
           font-size: 16px;
           margin-bottom: 10px;
           display: block;
