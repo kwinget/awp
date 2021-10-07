@@ -75,6 +75,7 @@ const ColumnStyle = styled.div`
     width:100%;
     animation: slideInDown; /* referring directly to the animation's @keyframe declaration */
     animation-duration: 2s; /* don't forget to set a duration! */
+    display:none;
   }
 `
 
