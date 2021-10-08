@@ -5,21 +5,26 @@ import * as variable from "../variables"
 import { useStaticQuery, graphql } from "gatsby"
 import { Link } from "gatsby"
 import Img from "gatsby-image"
-
+import FooterLogo from "../../../static/images/FooterLogo.png"
 const FooterStyle = styled.footer`
-  background-color: #000000;
+  background-color: #152141;
   color: white;
-  padding: 30px 0px 20px 0px;
+  padding: 40px 0px 30px 0px;
   .footer-upper-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
+    border-bottom:2px solid white;
     @media (max-width: ${variable.mobileWidth}) {
       flex-direction: column;
     }
     .logo {
-      width: 311px;
+      width: 187px;
+      img{
+        width:100%;
+        height:auto;
+      }
     }
     ul.footer-main-menu {
       width: calc(100% - 120px);
@@ -62,6 +67,13 @@ const FooterStyle = styled.footer`
     width: 100%;
     height: 2px;
     background-color: #383737;
+  }
+  .footer-under-container{
+    max-width:533px;
+    p{
+      font-size:10px;
+      line-height:15px;
+    }
   }
 `
 const activeStyle = {
@@ -180,7 +192,7 @@ export const Footer = () => {
       <Container className="footer-container">
         <div class="footer-upper-container">
           <Link className="logo" to="/">
-            <Img fluid={logo} alt="logo" />
+            <img src="../../images/FooterLogo.png" alt="logo" />
           </Link>
           <ul className="footer-main-menu">
             {nav.map((menuitem, index) => (
@@ -189,11 +201,10 @@ export const Footer = () => {
           </ul>
         </div>
       </Container>
-      <div class="footer-border"></div>
       <Container className="footer-container-below">
         <div class="footer-under-container">
-          &copy; {new Date().getFullYear()} Massive Therapeutics | All Rights
-          Reserved
+        <p>1 The publicly-available information provided in and on this website is for informational purposes only. It provides business information about Alternative Wealth Partners, LLC</p>
+        <p>This website is not intended to and does not constitute an offer to sell or the solicitation of an offer to purchase to any person in any jurisdiction. The contents of this website shall not be construed as legal, business or tax advise.</p>
         </div>
       </Container>
     </FooterStyle>

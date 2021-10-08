@@ -8,7 +8,7 @@ import * as variable from "../components/variables"
 const MobileContainer = styled.div`
 .menu-container {
   span{
-    background-color:white;
+    background-color:${variable.blue};
   }
 }
   display: none;
@@ -38,7 +38,7 @@ const MobileContainer = styled.div`
     a {
       display: block !important;
       text-align: left;
-      color: ${variable.darkBlue};
+      color: ${variable.blue};
       text-decoration: none;
       font-size: 27px;
       &:focus {
@@ -75,10 +75,10 @@ const MobileContainer = styled.div`
       top: 0;
     }
     .bm-cross {
-      background: ${variable.darkBlue};
+      background: ${variable.blue};
     }
     .bm-burger-bars {
-      background: ${variable.darkBlue};
+      background: ${variable.blue};
       border-radius: 10px;
     }
     .bm-menu {
@@ -110,12 +110,12 @@ const MenuToggle = styled.div`
   top: ${props => (props.open ? "28px" : "auto")};
   right: ${props => (props.open ? "20px" : "auto")};
   span {
-    box-shadow: 0px 3px #000000;
+ 
     display: block;
     position: absolute;
     height: 7px;
     width: 100%;
-    background: white;
+    background: ${variable.blue};
     border-radius: 10px;
     opacity: 1;
     left: 0;
@@ -180,7 +180,7 @@ const MenuWrapper = styled.div`
     a {
       display: block !important;
       text-align: left;
-      color: ${variable.darkGray};
+      color: ${variable.blue};
       text-decoration: none;
       font-size: 27px;
       &:focus {

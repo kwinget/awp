@@ -4,12 +4,14 @@
     padding-top:150px;
     text-align:center;
     padding-bottom:40px;
-    width:860px;
     max-width:860px;
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items:center;
+    @include mobile(){
+      padding-top:60px;
+    }
   }
   .basic-slice-container{
     justify-content:center;
@@ -23,6 +25,11 @@
     padding-left:100px;
     padding-right:100px;
     width:100%;
+    margin-top:0px;
+    @include mobile(){
+      padding-left:0px;
+      padding-right:0px;
+    }
   }
   p{
     font-size:20px;
@@ -31,6 +38,10 @@
     padding-left:100px;
     padding-right:100px;
     width:100%;
+    @include mobile(){
+      padding-left:0px;
+      padding-right:0px;
+    }
   }
   ul{
     display:flex;
@@ -38,6 +49,11 @@
     padding:0px;
     margin-top:90px;
     width:100%;
+    @include mobile(){
+      margin-top:60px;
+      flex-direction:column;
+      align-items:center;
+    }
     li{
       list-style:none;
       font-size:25px;
@@ -46,6 +62,7 @@
       font-family: "Georgia";
       max-width:200px;
       color:rgba(255,255,255,0.8);
+      margin-bottom:40px;
     }
   }
 }
@@ -59,11 +76,15 @@
     display:inline-block;
     padding:80px 0px;
     text-align:center;
+    @include mobile(){
+      padding:40px 0px;
+    }
     p{
       max-width:780px;
     }
     h2{
       font-size:40px;
+      margin-top:0px;
     }
     a{
       @include cta-button();
@@ -74,6 +95,9 @@
 #slice-id-home-video{
   .column{
     padding:170px 0px;
+    @include mobile(){
+      padding:60px 0px;
+    }
     .column-item{
       &:nth-child(1){
         width:40%;
@@ -141,6 +165,9 @@
     display:inline-block;
     padding:80px 0px;
     text-align:center;
+    @include mobile(){
+      padding:60px 0px;
+    }
     h4{
       font-size:40px;
       font-weight:400;
@@ -171,11 +198,20 @@
       justify-content: space-between;
       padding:0px;
       margin:70px 0px;
+      @include mobile(){
+        flex-direction:column;
+      }
       li{
         list-style:none;
         padding:10px 40px;
         display:flex;
         flex-direction:column;
+        width:(calc(100% / 3));
+        @include mobile(){
+          width:100%;
+          flex-direction:column;
+          margin-bottom:20px;
+        }
         &:nth-child(2){
           border-left:3px solid $blue;
           border-right:3px solid $blue;
@@ -211,6 +247,47 @@
         font-weight:bold;
         margin:10px 0px 0px 0px;
       }
+    }
+  }
+}
+#slice-id-home-faqs{
+  .column{
+    padding:40px 0px;
+    .column-item{
+      width: calc(100% / 3 - 15px);
+    }
+    h3{
+font-size:23px;
+font-weight:normal;
+line-height:25px;
+    }
+    p{
+      font-size:18px;
+      line-height:21px;
+    }
+  }
+}
+#slice-id-footer-cta{
+  .column{
+    padding:120px 0px;
+    color:white;
+    align-items: center;
+    h3{
+      font-size:40px;
+      margin-bottom:20px;
+    }
+    p{
+      font-size:18px;
+      margin-bottom:20px;
+      margin-top:0px;
+    }
+    a{
+      @include cta-button-white();
+    }
+  }
+  .column-item{
+    &:nth-child(2){
+      text-align:right;
     }
   }
 }
