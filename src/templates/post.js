@@ -223,19 +223,6 @@ const BlogHeader = styled.div`
       margin-bottom: 20px;
     }
   }
-  &:after {
-    width: 100%;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    height: 100px;
-    position: absolute;
-    bottom: 0px;
-    content: "";
-  }
 `
 
 const Post = props => {
@@ -244,6 +231,7 @@ const Post = props => {
   const node = props.data.page.data
   const site = props.data.site
   const defaultBlock = props.data.defaultBlock.data
+  console.log(props)
   // const defaultBlock = props.data.prismic.allBlocks.edges[0].node
   // const site = props.data.prismic.allSite_informations.edges[0].node
   const shareUrl =
@@ -385,7 +373,7 @@ export const postQuery = graphql`
         }
       }
     }
-    blogbg: file(relativePath: { eq: "Pageheaderblog.png" }) {
+    blogbg: file(relativePath: { eq: "BlogHeader.png" }) {
       childImageSharp {
         fluid(maxWidth: 1920) {
           ...GatsbyImageSharpFluid_withWebp_tracedSVG
