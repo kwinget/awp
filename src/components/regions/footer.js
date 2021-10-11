@@ -77,7 +77,7 @@ const FooterStyle = styled.footer`
   }
 `
 const activeStyle = {
-  color: variable.blue,
+  textDecoration:"underline",
 }
 function menuRender(menuitem) {
   if (

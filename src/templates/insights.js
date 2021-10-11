@@ -105,19 +105,6 @@ const InsightsStyle = styled.div`
 
 const InsightsHeader = styled.div`
   position: relative;
-  &:after {
-    width: 100%;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    height: 100px;
-    position: absolute;
-    bottom: 0px;
-    content: "";
-  }
   section {
     padding: 0px !important;
   }
@@ -125,6 +112,20 @@ const InsightsHeader = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction:column;
+    text-align:center;
+    p{
+      color:white;
+      max-width:350px;
+      font-size:18px;
+      line-height:22px;
+      margin:0px;
+    }
+    h1{
+      max-width:450px;
+      line-height:57px;
+      margin-bottom:25px;
+    }
   }
   h1 {
     font-weight: 800;
@@ -207,7 +208,8 @@ const Post = props => {
         <BackgroundImage fluid={props.data.blogbg.childImageSharp.fluid}>
           <Container className="hero-slice-container">
             <div className="hero-flex" style={{ minHeight: min_height }}>
-              <h1>Insights</h1>
+              <h1>Latest news & updates</h1>
+              <p>News and expertise about alternative investing and our fund.</p>
             </div>
           </Container>
         </BackgroundImage>

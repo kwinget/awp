@@ -6,16 +6,53 @@ import phoneIcon from "../../images/phoneicon.png"
 import emailIcon from "../../images/email.png"
 import locationIcon from "../../images/locationicon.png"
 const ContactStyle = styled.div`
-  padding: 75px 0px;
+  padding: 60px 0px;
   margin: 0 auto;
   max-width: 900px;
+  color:white;
+  p{
+    color:white;
+  }
+  .contact-top-copy{
+    max-width:520px;
+    text-align:center;
+    h2{
+      font-size:40px;
+      margin:0px;
+    }
+    h3{
+      font-size:40px;
+      margin:0px;
+      font-weight:normal;
+    }
+    p{
+      font-size:18px;
+      line-height:22px;
+      margin:30px 0px;
+    }
+  }
   .contact-outer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    form{
+      width:100%;
+    }
   }
   .contact-form-left {
-    width: calc(75% - 35px);
+    max-width:615px;
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    form{
+      background-image:url("../../../images/FormBackground.png");
+      padding:20px;
+    }
     p {
       &:first-child {
         font-weight: 300;
@@ -131,9 +168,11 @@ export const ContactSlice = ({ slice }) => {
       <ContactStyle>
         <div className="contact-outer">
           <div className="contact-form-left">
-            <p>
-              If you’re a cannabis company seeking a supplier or an investor looking to enter the cannabis market, send us a message to get in touch.
-            </p>
+            <div class="contact-top-copy">
+            <h2>Invest in more.</h2>
+            <h3>Join our fund.</h3>
+            <p>Reach out to schedule a meeting with our team, learn about our investments, and join our fund.</p>
+            </div>
             <form
               name="contact"
               method="POST"
@@ -169,20 +208,16 @@ export const ContactSlice = ({ slice }) => {
 
               <input type="submit" className="contact-submit" value="Submit" />
             </form>
-          </div>
-          <div className="contact-form-right">
+            <div class="contact-copy-bottom">
+            <h2>Or reach us by:</h2>
             <div className="contact-phone">
-              <a href="tel:905.581.3114">905.581.3114</a>
+              <div>Phone</div>
+              <div>214.799.6977</div>
             </div>
-            <div className="contact-email">
-              <a href="mailto:marie.leblanc@massivebluemountain.com">
-                contact@massivetherapeutics.com
-              </a>
+            <div className="contact-phone">
+              <div>Email:</div>
+              <div>k.winget@alternativewealthpartners.com</div>
             </div>
-            <div className="contact-address">
-              <div>Massive Therapeutics</div>
-              <div>Toronto, Canada</div>
-              <div>Kingston, Jamaica</div>
             </div>
           </div>
         </div>

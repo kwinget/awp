@@ -102,6 +102,7 @@ const PageStyle = styled.div`
   margin: 0 auto;
   position: relative;
   top: 200px;
+  margin-bottom:260px;
   padding-bottom: ${variable.sectionPadding};
   .blog-post-container {
     @media (max-width: ${variable.mobileWidth}) {

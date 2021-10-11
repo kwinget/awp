@@ -1,41 +1,63 @@
-#slice-id-footer-hero {
-  position: relative;
-  &:before {
-    width: 100%;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 1) 100%
-    );
-    height: 100px;
-    position: absolute;
-    top: 0px;
-    content: "";
-    z-index: 9;
+#slice-id-faq-top{
+  .column{
+    padding:30px 0px;
+    border-bottom:2px solid #1E3163;
   }
-  h2 {
-    color: white;
-    text-align: center;
-    line-height: 47px;
-    font-size: 40px;
-    max-width: 350px;
-    margin: 0px auto 30px auto;
+  .column-item{
+    &:nth-child(1){
+      h2{
+        font-size:40px;
+        margin:0px;
+        font-weight:normal;
+      }
+      h3{
+        font-size:40px;
+        font-weight:bold;
+        margin:10px 0px 0px 0px;
+      }
+    }
   }
-  p {
-    color: white;
-    font-size: 17px;
-    line-height: 27px;
-    text-align: center;
-    max-width: 650px;
-    margin: 0 auto;
+}
+
+#slice-id-faq-lower{
+  .column{
+    padding:40px 0px;
+    .column-item{
+      width: calc(100% / 3 - 15px);
+    }
+    h3{
+font-size:23px;
+font-weight:normal;
+line-height:25px;
+    }
+    p{
+      font-size:18px;
+      line-height:21px;
+    }
   }
-  a {
-    @include cta-button;
-    font-size: 17px;
-    margin-top: 30px;
+}
+
+#slice-id-footer-cta{
+  .column{
+    padding:120px 0px;
+    color:white;
+    align-items: center;
+    h3{
+      font-size:40px;
+      margin-bottom:20px;
+    }
+    p{
+      font-size:18px;
+      margin-bottom:20px;
+      margin-top:0px;
+    }
+    a{
+      @include cta-button-white();
+    }
   }
-  section {
-    padding: 200px 0px 75px 0px;
+  .column-item{
+    &:nth-child(2){
+      text-align:right;
+    }
   }
 }
