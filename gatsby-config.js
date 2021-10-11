@@ -102,6 +102,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sass",
       options: {
+        implementation: require('sass'),
         data: '@import "variables.scss"; @import "mixins.scss";',
         includePaths: ["src/components/scss"],
       },

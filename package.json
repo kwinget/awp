@@ -55,7 +55,6 @@
     "gatsby-v2-plugin-page-transitions": "^1.0.0",
     "material-ui": "^0.20.2",
     "netlify-plugin-gatsby-cache": "^0.2.2",
-    "node-sass": "^4.14.1",
     "preact": "^10.5.4",
     "preact-render-to-string": "^5.1.10",
     "prismic-dom": "^2.2.3",
@@ -78,6 +77,7 @@
     "react-stonecutter": "^0.3.10",
     "react-typeform-embed": "^0.2.1",
     "react-youtube": "^7.9.0",
+    "sass": "^1.42.1",
     "string-strip-html": "^5.0.2",
     "styled-components": "^5.0.1"
   },
