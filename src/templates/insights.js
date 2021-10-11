@@ -87,8 +87,8 @@ const InsightsStyle = styled.div`
       display: inline-block;
       margin-left: 10px;
       background-color: white;
-      border: 2px solid ${variable.darkGreen};
-      color: ${variable.darkGreen};
+      border: 2px solid ${variable.blue};
+      color: ${variable.blue};
       &:first-child {
         margin-left: 0px;
       }
@@ -96,7 +96,7 @@ const InsightsStyle = styled.div`
         background: darken($dark-blue, 10%);
       }
       &[aria-current] {
-        background-color: ${variable.darkGreen};
+        background-color: ${variable.blue};
         color: white;
       }
     }

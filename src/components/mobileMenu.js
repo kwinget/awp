@@ -187,7 +187,7 @@ const MenuWrapper = styled.div`
         outline: none !important;
       }
       &.active {
-        color: ${variable.red};
+        color: ${variable.blue};
       }
     }
     ul {

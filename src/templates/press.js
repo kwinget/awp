@@ -219,7 +219,7 @@ const PageStyle = styled.div`
     justify-content: center;
     margin-bottom: 40px;
     a {
-      border: 2px solid ${variable.darkGreen};
+      border: 2px solid ${variable.blue};
       border-radius: 10px;
       padding: 5px 20px;
       font-size: 17px;
@@ -227,7 +227,7 @@ const PageStyle = styled.div`
       font-weight: 500;
       &:hover {
         color: white;
-        background-color: ${variable.darkGreen};
+        background-color: ${variable.blue};
       }
     }
   }
