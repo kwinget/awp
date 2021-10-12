@@ -326,7 +326,7 @@ class Mobilemenu extends React.Component {
                       <li key={menuitem.id}>
                         {menuitem.primary.link.url && (
                           <Link
-                            activeStyle={{ color: variable.darkgray }}
+                            activeStyle={{ color: variable.blue }}
                             to={menuitem.primary.link.url}
                             onClick={() => this.toggleMenu()}
                             activeClassName="active"
@@ -337,7 +337,7 @@ class Mobilemenu extends React.Component {
                         )}
                         {!menuitem.primary.link.url && (
                           <Link
-                            activeStyle={{ color: variable.darkgray }}
+                            activeStyle={{ color: variable.blue }}
                             to={menuitem.primary.relative_link.text}
                             onClick={() => this.toggleMenu()}
                             activeClassName="active"

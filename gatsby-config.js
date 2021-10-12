@@ -87,7 +87,7 @@ module.exports = {
       },
     },
     // `gatsby-plugin-netlify-cache`,
-    `gatsby-plugin-preact`,
+    // `gatsby-plugin-preact`,
     // `gatsby-plugin-webpack-bundle-analyser-v2`,
     "gatsby-plugin-loadable-components-ssr",
     {

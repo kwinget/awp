@@ -51,7 +51,8 @@ const ContactStyle = styled.div`
     flex-direction:column;
     form{
       background-image:url("../../../images/FormBackground.png");
-      padding:20px;
+      padding:40px;
+      border-radius:5px;
     }
     p {
       &:first-child {
@@ -114,13 +115,13 @@ const ContactStyle = styled.div`
   input {
     width: 100%;
     -webkit-appearance: none;
-    border: 2px solid ${variable.green};
+    border: 2px solid ${variable.blue};
     border-radius: 7px;
     padding: 15px 20px;
     font-size: 17px;
     font-weight: 300;
     &::placeholder {
-      color: ${variable.green};
+      color: ${variable.blue};
       font-size: 17px;
       font-weight: 300;
     }
@@ -128,7 +129,7 @@ const ContactStyle = styled.div`
   textarea {
     width: 100%;
     -webkit-appearance: none;
-    border: 2px solid ${variable.green};
+    border: 2px solid ${variable.blue};
     border-radius: 7px;
     padding: 15px 20px;
     height: 240px;
@@ -136,7 +137,7 @@ const ContactStyle = styled.div`
     font-weight: 300;
     line-height: 24px;
     &::placeholder {
-      color: ${variable.green};
+      color: ${variable.blue};
       font-size: 17px;
       font-weight: 300;
     }
@@ -145,12 +146,19 @@ const ContactStyle = styled.div`
     display: none;
     -webkit-appearance: none;
   }
+  .submit-holder{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
   .contact-submit {
     color: white;
-    background-color: ${variable.green};
-    padding: 12px 70px;
+    background-color: ${variable.blue};
+    padding: 12px 20px;
     font-size: 21px;
     margin-top: 25px;
+    display:inline-block;
+    width:auto;
   }
   .email-phone {
     display: flex;
@@ -159,6 +167,31 @@ const ContactStyle = styled.div`
     margin: 25px 0px;
     input {
       width: calc(50% - 6px);
+    }
+  }
+  .contact-copy-bottom{
+    text-align:center;
+    margin-top:40px;
+    h2{
+      font-size:30px;
+    }
+    .contact-phone2{
+      font-size:20px;
+      margin-bottom:12px;
+      div{
+        &:nth-child(1){
+        font-weight:bold;
+      }
+      }
+
+    }
+    .contact-email2{
+      font-size:20px;
+      div{
+        &:nth-child(1){
+        font-weight:bold;
+      }
+      }
     }
   }
 `
@@ -205,16 +238,17 @@ export const ContactSlice = ({ slice }) => {
               </div>
 
               <textarea id="message" name="message" placeholder="Message" />
-
-              <input type="submit" className="contact-submit" value="Submit" />
+              <div className="submit-holder">
+              <input type="submit" className="contact-submit" value="Send Message" />
+              </div>
             </form>
             <div class="contact-copy-bottom">
             <h2>Or reach us by:</h2>
-            <div className="contact-phone">
+            <div className="contact-phone2">
               <div>Phone</div>
               <div>214.799.6977</div>
             </div>
-            <div className="contact-phone">
+            <div className="contact-email2">
               <div>Email:</div>
               <div>k.winget@alternativewealthpartners.com</div>
             </div>
