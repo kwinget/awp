@@ -1,189 +1,151 @@
-#slice-id-about-thinkers{
-    padding:100px 0px;
-    text-align:center;
+#slice-id-about-hero{
+  position:relative;
+  &:after{
+    content: '';
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    background-color:white;
+    position:absolute;
+    bottom:-20px;
+    right: calc(50% - 20px);
+  }
+  section{
+    padding:165px 0px;
+    @include mobile(){
+      padding:60px 0px;
+    }
     .section-content{
+      max-width:707px;
+      text-align:center;
+      color:white;
+      margin:0 auto;
+      h2{
+        font-size:40px;
+        font-weight:normal;
+        margin:0px;
+      }
+      h3{
+        font-size:40px;
+        margin:0px;
+      }
+    }
+  }
+}
+#slice-id-kelly{
+  position:relative;
+  &:after{
+    content: '';
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    background-color:white;
+    position:absolute;
+    bottom:-20px;
+    right: calc(50% - 20px);
+  }
+  .column{
+    padding:60px 0px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    .column-item{
+      &:nth-child(1){
+        width:100%;
+        text-align:center;
+        h2{
+          font-size:40px;
+          font-weight:normal;
+          margin:0px;
+        }
+        h3{
+          font-size:40px;
+          margin:0px;
+        }
+      }
+      &:nth-child(2){
+        border-radius:20px;
+        border:3px solid $blue;
+        padding:60px;
+        width:100%;
         max-width:1000px;
-        margin:0 auto;
+        text-align:center;
+        margin-top:40px;
+        @include mobile(){
+          padding:40px 20px;
+        }
         p{
-            font-size:18px;
-            line-height:27px;
-            font-weight:300;
+          max-width:707px;
+          margin:20px auto 0px auto;
         }
+        .block-img{
+          width:100%;
+          max-width:180px;
+          margin:0 auto;
+          img{
+            width:100%;
+            height:auto;
+          }
+        }
+      }
     }
+  }
 }
-#slice-id-about-our-team{
-    > div{
-        > div{
- padding:120px 0px;
-        }
-    }
-   .column{
-       align-items:center;
-       max-width: 1000px;
-       margin: 0 auto;
-       @include mobile(){
-         flex-direction:column-reverse;
-       }
-       .column-item{
-        &:nth-child(1){
-            width:calc(65% - 50px);
-            @include mobile(){
-              width:100%;
-              text-align:center;
-            }
-        }
-        &:nth-child(2){
-            width:calc(35% - 50px);
-            @include mobile(){
-              margin:0px;
-              width:100%;
-              .block-img{
-                img{
-                  max-width:200px;
-                  margin:0 auto;
-                  display:block;
-                }
-              }
-            }
-        }
-           img{
-               height:auto;
-           }
-       }
-   }
-}
-#slice-id-about-seeds{
-    padding:80px 0px;
+
+#slice-id-our-story{
+  .column{
+    padding:60px 0px;
+    justify-content:center;
+    color:white;
     text-align:center;
-    .section-content{
-        max-width: 1000px;
-        margin: 0 auto;
+    .column-item{
+      width:calc(100% / 3 - 20px);
+      &:nth-child(1){
+        width:100%;
+        color:white;
+        text-align:center;
+        padding:0px 200px;
+        margin-bottom:60px;
+        @include tablet(){
+          padding:0px;
+        }
+        h2{
+          font-size:40px;
+          font-weight:normal;
+          margin:0px;
+        }
+        h3{
+          font-size:40px;
+          margin:0px;
+        }
+        a{
+          @include cta-button-white();
+        }
+      }
+      &:nth-child(2){
+        h2{
+          font-size:40px;
+        }
+      }
+      &:nth-child(3){
+        margin: 0px 30px;
+    padding: 0px 20px;
+    border-left: 3px solid white;
+    border-right: 3px solid white;
+    @include tablet(){
+      border:0px;
+      margin:0px;
+      padding:0px;
     }
-}
-
-#slice-id-about-benefits{
-    .left{
-        .left-image-inner{
-            background-color:#239145;
-            img{
-                height:auto;
-            }
-        }
-    }
-}
-
-#slice-id-about-bottom-contact{
-    section {
-        padding: 0px 0px 50px 0px;
-        text-align: center;
-        max-width: 1000px;
-        margin: 0 auto;
-        a {
-          @include cta-button();
+        h2{
+          font-size:40px;
         }
       }
-}
-
-
-#slice-id-about-benefits{
-    padding-top:50px;
-    .left-image-inner{
-        img{
-            border-radius:10px;
-        }
-    }
-    .left{
-        width:calc(40% - 30px)
-      }
-      .right{
-        width:calc(55% - 30px)
-      }
-      .left-image{
-        position:relative;
-        .left-shadow{
-          background-color: rgba(35, 164, 85, 0.5);
-          position:absolute;
-          height:211px;
-          right:-50px;
-          width:100%;
-        }
-        .gatsby-image-wrapper{
-          position: relative;
-        //   right: 65px;
-          height: auto;
-          display: block;
-        }
-      }
-}
-
-#slice-id-about-medical{
-    padding:50px 0px;
-    @include mobile(){
-      > div{
-        > div{
-          flex-direction: column-reverse;
+      &:nth-child(4){
+        h2{
+          font-size:40px;
         }
       }
     }
-    .left-image-inner{
-        img{
-            border-radius:10px;
-        }
-    }
-    .left{
-        width:calc(55% - 30px)
-      }
-      .right{
-        width:calc(40% - 30px)
-      }
-      .right-image{
-        position:relative;
-        .right-shadow{
-          background-color: rgba(35, 164, 85, 0.5);
-          position:absolute;
-          height:211px;
-          left:-50px;
-          width:100%;
-        }
-        .gatsby-image-wrapper{
-          position: relative;
-        //   right: 65px;
-          height: auto;
-          display: block;
-        }
-      }
-}
-
-#slice-id-about-recreational{
-    padding-top:50px;
-    @include mobile(){
-      padding-top:0px;
-    }
-    .left-image-inner{
-        img{
-            border-radius:10px;
-        }
-    }
-    .left{
-        width:calc(40% - 30px)
-      }
-      .right{
-        width:calc(55% - 30px)
-      }
-      .left-image{
-        position:relative;
-        .left-shadow{
-          background-color: rgba(35, 164, 85, 0.5);
-          position:absolute;
-          height:211px;
-          right:-50px;
-          width:100%;
-        }
-        .gatsby-image-wrapper{
-          position: relative;
-        //   right: 65px;
-          height: auto;
-          display: block;
-        }
-      }
+  }
 }
