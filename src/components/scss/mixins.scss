@@ -25,6 +25,21 @@
     color:white;
   }
 }
+@mixin cta-button-white-bg() {
+  color: $blue;
+  padding: 12px 35px;
+  border-radius: 5px;
+  border:2px solid $blue;
+  font-size: 18px;
+  margin-top: 20px;
+  font-weight:bold;
+  display: inline-block;
+  background-color:white;
+  &:hover {
+    background: darken($blue, 10%);
+    color:white;
+  }
+}
 @mixin cta-button-white() {
   color: white;
   padding: 12px 35px;

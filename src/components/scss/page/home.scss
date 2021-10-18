@@ -41,13 +41,18 @@
     padding-left:100px;
     padding-right:100px;
     width:100%;
-    border-left:3px solid white;
-    border-right:3px solid white;
     margin-top:0px;
+    &:nth-child(2){
+      border-left:3px solid white;
+      border-right:3px solid white;
+    }
     @include mobile(){
       padding-left:0px;
       padding-right:0px;
     }
+  }
+  a{
+    @include cta-button-white-bg();
   }
   ul{
     display:flex;
