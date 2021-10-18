@@ -15,15 +15,15 @@ const FooterStyle = styled.footer`
     justify-content: space-between;
     align-items: center;
     padding-bottom: 40px;
-    border-bottom:2px solid white;
+    border-bottom: 2px solid white;
     @media (max-width: ${variable.mobileWidth}) {
       flex-direction: column;
     }
     .logo {
       width: 187px;
-      img{
-        width:100%;
-        height:auto;
+      img {
+        width: 100%;
+        height: auto;
       }
     }
     ul.footer-main-menu {
@@ -38,12 +38,17 @@ const FooterStyle = styled.footer`
         width: 100%;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
       }
       li {
         list-style: none;
         margin-left: 20px;
         &:first-child {
           margin-left: 0px;
+        }
+        @media (max-width: ${variable.mobileWidth}) {
+          margin-left: 0px;
+          margin-bottom: 10px;
         }
       }
       a {
@@ -68,16 +73,16 @@ const FooterStyle = styled.footer`
     height: 2px;
     background-color: #383737;
   }
-  .footer-under-container{
-    max-width:533px;
-    p{
-      font-size:10px;
-      line-height:15px;
+  .footer-under-container {
+    max-width: 533px;
+    p {
+      font-size: 10px;
+      line-height: 15px;
     }
   }
 `
 const activeStyle = {
-  textDecoration:"underline",
+  textDecoration: "underline",
 }
 function menuRender(menuitem) {
   if (
@@ -203,8 +208,17 @@ export const Footer = () => {
       </Container>
       <Container className="footer-container-below">
         <div class="footer-under-container">
-        <p>1 The publicly-available information provided in and on this website is for informational purposes only. It provides business information about Alternative Wealth Partners, LLC</p>
-        <p>This website is not intended to and does not constitute an offer to sell or the solicitation of an offer to purchase to any person in any jurisdiction. The contents of this website shall not be construed as legal, business or tax advise.</p>
+          <p>
+            1 The publicly-available information provided in and on this website
+            is for informational purposes only. It provides business information
+            about Alternative Wealth Partners, LLC
+          </p>
+          <p>
+            This website is not intended to and does not constitute an offer to
+            sell or the solicitation of an offer to purchase to any person in
+            any jurisdiction. The contents of this website shall not be
+            construed as legal, business or tax advise.
+          </p>
         </div>
       </Container>
     </FooterStyle>

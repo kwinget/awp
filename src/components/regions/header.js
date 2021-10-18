@@ -9,7 +9,7 @@ import MobileMenu from "../mobileMenu"
 const HeaderStyle = styled.header`
   z-index: 2;
   width: 100%;
-  background-size:cover;
+  background-size: cover;
   .header-social-container {
     padding: 18px 0px;
     @media (max-width: ${variable.tabletWidth}) {
@@ -55,17 +55,16 @@ const HeaderStyle = styled.header`
       list-style: none;
       margin-right: 50px;
       position: relative;
-      &:nth-child(4){
+      &:nth-child(4) {
         a {
           color: ${variable.blue};
-          border:2px solid ${variable.blue};
+          border: 2px solid ${variable.blue};
           padding: 9px 20px;
           border-radius: 5px;
           &:hover {
             background: ${variable.blue};
             color: white !important;
-            border:2px solid rgba(255,255,255,0);
-
+            border: 2px solid rgba(255, 255, 255, 0);
           }
         }
       }
@@ -76,11 +75,11 @@ const HeaderStyle = styled.header`
           color: white;
           padding: 9px 20px;
           border-radius: 5px;
-          border:2px solid rgba(255,255,255,0);
+          border: 2px solid rgba(255, 255, 255, 0);
           &:hover {
             background: white;
             color: ${variable.blue} !important;
-            border:2px solid ${variable.blue};
+            border: 2px solid ${variable.blue};
           }
           &[aria-current] {
             color: ${variable.blue} !important;
@@ -98,6 +97,7 @@ const HeaderStyle = styled.header`
         font-weight: bold;
         &:hover {
           color: ${variable.blue};
+          text-decoration: underline;
         }
       }
       .sub-menu {
@@ -150,25 +150,19 @@ function menuRender(menuitem) {
   ) {
     return (
       <div>
-        <Link activeStyle={activeStyle} to={menuitem.primary.link.url}>
+        <Link to={menuitem.primary.link.url}>
           {menuitem.primary.label.text}
         </Link>
         <div className="sub-menu">
           {menuitem.items.map((submenuitem, index) => (
             <div key={index}>
               {submenuitem.sub_nav_link.url && (
-                <Link
-                  activeStyle={activeStyle}
-                  to={submenuitem.sub_nav_link.url}
-                >
+                <Link to={submenuitem.sub_nav_link.url}>
                   {submenuitem.sub_nav_link_label.text}
                 </Link>
               )}
               {submenuitem.relative_link.text && (
-                <Link
-                  activeStyle={activeStyle}
-                  to={submenuitem.relative_link.text}
-                >
+                <Link to={submenuitem.relative_link.text}>
                   {submenuitem.sub_nav_link_label.text}
                 </Link>
               )}
@@ -180,17 +174,14 @@ function menuRender(menuitem) {
   } else {
     if (menuitem.primary.link.url != "") {
       return (
-        <Link activeStyle={activeStyle} to={menuitem.primary.link.url}>
+        <Link to={menuitem.primary.link.url}>
           {menuitem.primary.label.text}
         </Link>
       )
     }
     if (menuitem.primary.relative_link) {
       return (
-        <Link
-          activeStyle={activeStyle}
-          to={menuitem.primary.relative_link.text}
-        >
+        <Link to={menuitem.primary.relative_link.text}>
           {menuitem.primary.label.text}
         </Link>
       )
