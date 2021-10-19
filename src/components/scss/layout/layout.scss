@@ -10,6 +10,9 @@ body {
   font-size: 20px;
   line-height: 25px;
   color: $blue;
+  zoom: .9; 
+  -moz-transform: scale(.9); 
+  -moz-transform-origin: 0 0;
 }
 a {
   text-decoration: none;

@@ -264,6 +264,15 @@
           font-size: 70px;
           line-height: 80px;
         }
+        .h3-light{
+          font-size:40px;
+          font-weight:bold;
+          margin-top:0px;
+          margin-bottom:20px;
+          strong{
+            display:none;
+          }
+        }
         @include mobile() {
           width: 100%;
           flex-direction: column;

@@ -9,6 +9,7 @@ import BlogPostTeaser from "../components/entities/blog_post/BlogPostTeaser"
 import loadable from "@loadable/component"
 import "../components/scss/blocks/footer.scss"
 import Img from "gatsby-image"
+
 function returnImage(post) {
   if (post.data.main_image.localFile != null) {
     if (post.data.main_image.localFile.childImageSharp) {
@@ -118,6 +119,16 @@ const InsightsStyle = styled.div`
 
 const InsightsHeader = styled.div`
   position: relative;
+  &:after{
+    content: '';
+    height:40px;
+    width:40px;
+    border-radius:50%;
+    background-color:white;
+    position:absolute;
+    bottom:-20px;
+    right: calc(50% - 20px);
+  }
   section {
     padding: 0px !important;
   }
@@ -151,23 +162,55 @@ const InsightsHeader = styled.div`
   }
 `
 const BlogPinned = styled.div`
+
+box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.09);
   .pinned-inner {
     display: flex;
     justify-content: space-between;
     padding: 90px 0px;
+    @media (max-width: ${variable.mobileWidth}) {
+      flex-direction:column;
+    }
     .pinned-left {
-      width: calc(50% - 10px);
+      width: calc(50% - 17px);
       .blog-pinned-image-container {
         height: 100%;
         width: 100%;
+
         section {
           height: 100%;
           width: 100%;
+          @media (max-width: ${variable.mobileWidth}) {
+      min-height:200px;
+    }
         }
       }
+      @media (max-width: ${variable.mobileWidth}) {
+      width:100%;
+    }
     }
     .pinned-right {
-      width: calc(50% - 10px);
+      width: calc(50% - 17px);
+      background-image:url("../../images/LineGraphic.png");
+      background-size:300px;
+      background-repeat:no-repeat;
+      background-position:bottom right;
+      h2{
+        font-size:25px;
+        line-height:27px;
+      }
+      .blog-teaser{
+        p{
+          font-size:17px;
+        }
+      }
+      a{
+        font-size:17px;
+        color:#236382;
+      }
+      @media (max-width: ${variable.mobileWidth}) {
+      width:100%;
+    }
     }
   }
 `
@@ -249,8 +292,7 @@ const Post = props => {
           </Container>
         </BackgroundImage>
       </InsightsHeader>
-      <InsightsStyle>
-        <BlogPinned>
+      <BlogPinned>
           <Container className="blog-pinned">
             {props.data.blogpinned && (
               <div className="pinned-inner">
@@ -273,7 +315,7 @@ const Post = props => {
                     className="cta-button"
                     to={"/blog/" + props.data.blogpinned.nodes[0].uid}
                   >
-                    Read more
+                    Read the article
                   </Link>
                 </div>
                 {console.log(props.data.blogpinned.nodes[0])}
@@ -281,6 +323,7 @@ const Post = props => {
             )}
           </Container>
         </BlogPinned>
+      <InsightsStyle>
         <Container className="blog-index-container">
           <EntityResult blog={props.data.blog} />
         </Container>
