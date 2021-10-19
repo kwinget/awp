@@ -6,11 +6,11 @@ import styled from "styled-components"
 import * as variable from "../components/variables"
 
 const MobileContainer = styled.div`
-.menu-container {
-  span{
-    background-color:${variable.blue};
+  .menu-container {
+    span {
+      background-color: ${variable.blue};
+    }
   }
-}
   display: none;
   position: relative;
   height: 30px;
@@ -110,7 +110,6 @@ const MenuToggle = styled.div`
   top: ${props => (props.open ? "28px" : "auto")};
   right: ${props => (props.open ? "20px" : "auto")};
   span {
- 
     display: block;
     position: absolute;
     height: 7px;
@@ -121,7 +120,7 @@ const MenuToggle = styled.div`
     left: 0;
     transform: rotate(0deg);
     transition: ${props =>
-    props.open ? "all 0.25s ease-in" : "all 0.25s ease-out"};
+      props.open ? "all 0.25s ease-in" : "all 0.25s ease-out"};
   }
   span:nth-child(1) {
     top: ${props => (props.open ? "calc(50% - 3.5px)" : "10%")};
@@ -291,11 +290,10 @@ class Mobilemenu extends React.Component {
           }
         `}
         render={data => (
-
           <>
             {console.log(data)}
             <div id="mobile-menu-header">
-              <div classnName="menu-container">
+              <div className="menu-container">
                 <MenuToggle
                   onClick={() => this.toggleMenu()}
                   open={this.state.menuOpen}

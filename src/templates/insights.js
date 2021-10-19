@@ -8,6 +8,19 @@ import BackgroundImage from "gatsby-background-image"
 import BlogPostTeaser from "../components/entities/blog_post/BlogPostTeaser"
 import loadable from "@loadable/component"
 import "../components/scss/blocks/footer.scss"
+import Img from "gatsby-image"
+function returnImage(post) {
+  if (post.data.main_image.localFile != null) {
+    if (post.data.main_image.localFile.childImageSharp) {
+      return (
+        <BackgroundImage
+          Tag="section"
+          fluid={post.data.main_image.localFile.childImageSharp.fluid}
+        ></BackgroundImage>
+      )
+    }
+  }
+}
 const InsightsStyle = styled.div`
   padding: 75px 0px;
   .blog-index-container {
@@ -112,19 +125,19 @@ const InsightsHeader = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction:column;
-    text-align:center;
-    p{
-      color:white;
-      max-width:350px;
-      font-size:18px;
-      line-height:22px;
-      margin:0px;
+    flex-direction: column;
+    text-align: center;
+    p {
+      color: white;
+      max-width: 350px;
+      font-size: 18px;
+      line-height: 22px;
+      margin: 0px;
     }
-    h1{
-      max-width:450px;
-      line-height:57px;
-      margin-bottom:25px;
+    h1 {
+      max-width: 450px;
+      line-height: 57px;
+      margin-bottom: 25px;
     }
   }
   h1 {
@@ -137,7 +150,27 @@ const InsightsHeader = styled.div`
     min-height: 350px;
   }
 `
-
+const BlogPinned = styled.div`
+  .pinned-inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 90px 0px;
+    .pinned-left {
+      width: calc(50% - 10px);
+      .blog-pinned-image-container {
+        height: 100%;
+        width: 100%;
+        section {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    .pinned-right {
+      width: calc(50% - 10px);
+    }
+  }
+`
 // Sort and display the different slice options
 const EntityResult = ({ blog }) => {
   console.log(blog)
@@ -209,12 +242,45 @@ const Post = props => {
           <Container className="hero-slice-container">
             <div className="hero-flex" style={{ minHeight: min_height }}>
               <h1>Latest news & updates</h1>
-              <p>News and expertise about alternative investing and our fund.</p>
+              <p>
+                News and expertise about alternative investing and our fund.
+              </p>
             </div>
           </Container>
         </BackgroundImage>
       </InsightsHeader>
       <InsightsStyle>
+        <BlogPinned>
+          <Container className="blog-pinned">
+            {props.data.blogpinned && (
+              <div className="pinned-inner">
+                <div className="pinned-left">
+                  <div className="blog-pinned-image-container">
+                    {returnImage(props.data.blogpinned.nodes[0])}
+                  </div>
+                </div>
+                <div className="pinned-right">
+                  <h2>{props.data.blogpinned.nodes[0].data.title.text}</h2>
+                  {props.data.blogpinned.nodes[0].data.teaser && (
+                    <div
+                      className="blog-teaser"
+                      dangerouslySetInnerHTML={{
+                        __html: props.data.blogpinned.nodes[0].data.teaser.html,
+                      }}
+                    />
+                  )}
+                  <Link
+                    className="cta-button"
+                    to={"/blog/" + props.data.blogpinned.nodes[0].uid}
+                  >
+                    Read more
+                  </Link>
+                </div>
+                {console.log(props.data.blogpinned.nodes[0])}
+              </div>
+            )}
+          </Container>
+        </BlogPinned>
         <Container className="blog-index-container">
           <EntityResult blog={props.data.blog} />
         </Container>
@@ -258,6 +324,37 @@ export default Post
 
 export const postQuery = graphql`
   query blogListQuery($skip: Int!, $limit: Int!) {
+    blogpinned: allPrismicBlogPost(
+      sort: { order: DESC, fields: data___release_date }
+      filter: { data: { pinned: { eq: true } } }
+    ) {
+      nodes {
+        uid
+        data {
+          release_date(formatString: "MMM D Y")
+          teaser {
+            html
+          }
+          pinned
+          author {
+            text
+          }
+          title {
+            text
+          }
+          main_image {
+            url
+            localFile {
+              childImageSharp {
+                fluid(maxWidth: 475) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     blog: allPrismicBlogPost(
       sort: { order: DESC, fields: data___release_date }
       limit: $limit
@@ -270,6 +367,7 @@ export const postQuery = graphql`
           teaser {
             html
           }
+          pinned
           author {
             text
           }
