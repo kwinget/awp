@@ -1,7 +1,7 @@
 @mixin cta-button() {
   background-color: $blue;
   color: white;
-  padding: 12px 35px;
+  padding: 9px 30px;
   border-radius: 5px;
   font-size: 18px;
   margin-top: 20px;
@@ -13,7 +13,7 @@
 }
 @mixin cta-button-light() {
   color: $blue;
-  padding: 12px 35px;
+  padding: 9px 30px;
   border-radius: 5px;
   border:2px solid $blue;
   font-size: 18px;
@@ -27,7 +27,7 @@
 }
 @mixin cta-button-white-bg() {
   color: $blue;
-  padding: 12px 35px;
+  padding: 9px 30px;
   border-radius: 5px;
   border:2px solid $blue;
   font-size: 18px;
@@ -42,7 +42,7 @@
 }
 @mixin cta-button-white() {
   color: white;
-  padding: 12px 35px;
+  padding: 9px 30px;
   border-radius: 5px;
   border:2px solid white;
   font-size: 18px;

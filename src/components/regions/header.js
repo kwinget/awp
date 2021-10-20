@@ -53,9 +53,10 @@ const HeaderStyle = styled.header`
     padding: 0px;
     li {
       list-style: none;
-      margin-right: 50px;
+      margin-right: 30px;
       position: relative;
       &:nth-child(4) {
+        margin-right:15px;
         a {
           color: ${variable.blue};
           border: 2px solid ${variable.blue};
