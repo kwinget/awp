@@ -13,7 +13,6 @@ import Img from "gatsby-image"
 // import BasicSectionSlice from "../components/slices/BasicSectionSlice"
 import BackgroundImage from "gatsby-background-image"
 import loadable from "@loadable/component"
-import leaves from "../images/bloglogo.png"
 import facebookIcon from "../images/facebook.png"
 import linkedinIcon from "../images/linkedin.png"
 import twitterIcon from "../images/twitter.png"
@@ -184,7 +183,7 @@ const PageStyle = styled.div`
     margin-top: 45px;
     .blue-share {
       display: flex;
-      align-items:center;
+      align-items: center;
       flex-wrap: wrap;
       justify-content: space-between;
       width: 135px;
@@ -313,7 +312,6 @@ const Post = props => {
                   </TwitterShareButton>
                 </div>
               </div>
-
               <h1>{node.title.text}</h1>
               <div class="press-by-line">By: {node.author.text}</div>
               <div class="read-article">
@@ -322,9 +320,6 @@ const Post = props => {
                 </a>
               </div>
               {node.body && <PostSlices slices={node.body} />}
-              <div className="two-leaves">
-                <img src={leaves} />
-              </div>
             </div>
           </div>
         </Container>
