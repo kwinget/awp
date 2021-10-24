@@ -82,15 +82,16 @@ const HeaderStyle = styled.header`
             color: ${variable.blue} !important;
             border: 2px solid ${variable.blue};
           }
-          &[aria-current] {
+          /* &[aria-current] {
             color: ${variable.blue} !important;
             &:hover {
               background: ${variable.blue};
               color: white !important;
             }
-          }
+          } */
         }
       }
+      
       a {
         text-decoration: none;
         color: ${variable.blue};
