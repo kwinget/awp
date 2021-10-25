@@ -55,7 +55,7 @@ const HeaderStyle = styled.header`
       list-style: none;
       margin-right: 30px;
       position: relative;
-      &:nth-child(4) {
+      &:nth-child(5) {
         margin-right:15px;
         a {
           color: ${variable.blue};

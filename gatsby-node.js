@@ -20,7 +20,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
-  const postsPerPage = 6
+  const postsPerPage = 3
   const numPages = Math.ceil(pages.data.blog.nodes.length / postsPerPage)
   const insightsTemplate = path.resolve("src/templates/insights.js")
   Array.from({ length: numPages }).forEach((_, i) => {

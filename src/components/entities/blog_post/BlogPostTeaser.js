@@ -56,8 +56,7 @@ const BlogPostTeaserStyle = styled.article`
     font-size: 14px;
     color: #1E3163;
     position: absolute;
-    bottom: 0px;
-    left: 15px;
+    bottom: -20px;
   }
   .blog-teaser-image-container {
     height: 200px;
