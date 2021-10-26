@@ -98,7 +98,7 @@ const PostSlices = ({ slices, id }) => {
 }
 
 const PageStyle = styled.div`
-  max-width: 880px;
+  max-width: 687px;
   margin: 0 auto;
   position: relative;
   top: 200px;
@@ -109,7 +109,7 @@ const PageStyle = styled.div`
       flex-direction: column;
     }
     .main-image {
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       img {
         border-radius: 10px;
       }
@@ -123,9 +123,10 @@ const PageStyle = styled.div`
   h1 {
     margin-top: 0px;
     font-size: 30px;
-    line-height: 37px;
+    line-height: 30px;
     margin-bottom: 40px;
-    font-weight: 500;
+    font-weight: bold;
+    text-align:center;
   }
   h2 {
     margin-bottom: 0px;
@@ -169,10 +170,11 @@ const PageStyle = styled.div`
     }
   }
   .blog-line {
-    width: 52px;
-    height: 5px;
-    background-color: ${variable.green};
+    width: 160px;
+    height: 3px;
+    background-color: ${variable.blue};
     margin-bottom: 40px;
+    margin:0px auto 40px auto;
   }
   .two-leaves {
     text-align: center;
@@ -188,7 +190,7 @@ const PageStyle = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     .blue-share {
       display: flex;
       flex-wrap: wrap;
