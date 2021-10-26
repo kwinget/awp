@@ -129,7 +129,8 @@
 #slice-id-home-video {
   .column {
     padding: 165px 0px 90px 0px;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: space-between;
     @include mobile() {
       padding: 60px 0px;
     }
@@ -139,9 +140,11 @@
       }
       &:nth-child(2) {
         width: 55%;
+        // text-align: right;
         img {
           width: 100%;
           height: auto;
+          // max-width: 500px;
         }
       }
     }
