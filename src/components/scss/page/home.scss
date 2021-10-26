@@ -139,6 +139,10 @@
       }
       &:nth-child(2) {
         width: 55%;
+        img {
+          width: 100%;
+          height: auto;
+        }
       }
     }
     h3 {
@@ -264,13 +268,13 @@
           font-size: 70px;
           line-height: 80px;
         }
-        .h3-light{
-          font-size:40px;
-          font-weight:bold;
-          margin-top:0px;
-          margin-bottom:20px;
-          strong{
-            display:none;
+        .h3-light {
+          font-size: 40px;
+          font-weight: bold;
+          margin-top: 0px;
+          margin-bottom: 20px;
+          strong {
+            display: none;
           }
         }
         @include mobile() {
@@ -288,8 +292,8 @@
 }
 
 #slice-id-home-blog-list {
-  background-image:url("../../../images/H4.png");
-  background-size:cover;
+  background-image: url("../../../images/H4.png");
+  background-size: cover;
   section {
     padding: 70px 0px;
   }

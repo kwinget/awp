@@ -1,213 +1,252 @@
-#slice-id-what-is{
-  .section-content{
-    min-height:300px;
-    display:flex;
-    align-items:center;
-    h2{
-      color:white;
-      font-size:50px;
-      font-weight:normal;
-      max-width:250px;
-      strong{
-        font-weight:bold;
+#slice-id-what-is {
+  .section-content {
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    h2 {
+      color: white;
+      font-size: 50px;
+      font-weight: normal;
+      max-width: 250px;
+      strong {
+        font-weight: bold;
       }
     }
   }
 }
 
-#slice-id-start-inveesting{
-  .column{
-    padding:60px 0px 0px 0px;
-    p{
-      font-size:20px;
-      line-height:25px;
+#slice-id-start-inveesting {
+  .column {
+    padding: 60px 0px 0px 0px;
+    p {
+      font-size: 20px;
+      line-height: 25px;
     }
-    a{
+    a {
       @include cta-button();
     }
-    .column-item{
-      &:nth-child(2){
-        overflow:visible;
-        .column-item-inner{
-          display:flex;
-          background-color:white;
-          border-radius:50%;
-          position:relative;
+    .column-item {
+      &:nth-child(2) {
+        overflow: visible;
+        .column-item-inner {
+          background: rgb(255, 255, 255);
+          background: linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 1) 60%,
+            rgba(255, 255, 255, 0) 100%
+          );
+          border-radius: 50%;
+          position: relative;
           top: -250px;
-          padding: 70px;
-          @include mobile(){
-            top:auto;
-            position:relative;
-            margin:40px 0px;
+          padding: 85px;
+          width: 600px;
+          height: 600px;
+          @include tablet() {
+            width: 400px;
+            height: 400px;
+            padding: 60px;
+          }
+          @include mobile() {
+            top: auto;
+            position: relative;
+            margin: 40px 0px;
+            width: 100%;
+            height: 100%;
+            background: none;
+            display: flex;
+            justify-content: center;
           }
         }
-        .block-img{
-          position:relative;
-          &:nth-child(1){
-            width:204px;
+        .block-img {
+          position: absolute;
+          @include mobile() {
+            position: relative;
           }
-          &:nth-child(2){
-            width:170px;
-            top:150px;
-            left:-100px;
+          &:nth-child(1) {
+            width: 204px;
+            @include tablet() {
+              width: 120px;
+            }
+            @include mobile() {
+              width: 100px;
+            }
           }
-          &:nth-child(3){
-            width:135px;
-            top:75px;
+          &:nth-child(2) {
+            width: 170px;
+            bottom: 60px;
+            left: 110px;
+            @include tablet() {
+              width: 120px;
+              left: 80px;
+              bottom: 40px;
+            }
+            @include mobile() {
+              width: 100px;
+            }
           }
-          img{
-            width:100%;
-            height:auto;
+          &:nth-child(3) {
+            width: 145px;
+            top: 180px;
+            right: 100px;
+            @include tablet() {
+              width: 100px;
+              top: 100px;
+              right: 60px;
+            }
+            @include mobile() {
+              width: 100px;
+            }
+          }
+          img {
+            width: 100%;
+            height: auto;
           }
         }
       }
     }
   }
 }
-#slice-id-diversified{
-
-  .section-content{
-    color:white;
-    padding:160px 0px 200px 0px;
-    text-align:center;
-    max-width:710px;
-    margin:0 auto;
-    @include mobile(){
-      padding:60px 0px 60px 0px;
+#slice-id-diversified {
+  .section-content {
+    color: white;
+    padding: 160px 0px 200px 0px;
+    text-align: center;
+    max-width: 710px;
+    margin: 0 auto;
+    @include mobile() {
+      padding: 60px 0px 60px 0px;
     }
   }
-  h3{
-    display:inline-block;
-    font-size:40px;
-    font-weight:normal;
-    width:100%;
-    margin:0px;
+  h3 {
+    display: inline-block;
+    font-size: 40px;
+    font-weight: normal;
+    width: 100%;
+    margin: 0px;
   }
-  h4{
-    display:inline-block;
-    font-size:40px;
-    width:100%;
-    margin:20px 0px;
+  h4 {
+    display: inline-block;
+    font-size: 40px;
+    width: 100%;
+    margin: 20px 0px;
   }
-  p{
-    display:inline-block;
-    width:100%;
-    margin:0px;
-
+  p {
+    display: inline-block;
+    width: 100%;
+    margin: 0px;
   }
 }
 
-
-#slice-id-points{
-  max-height: 820px;
-  @include tablet(){
-    max-height:100%;
+#slice-id-points {
+  // max-height: 820px;
+  @include tablet() {
+    max-height: 100%;
   }
-  .column{
-    position:relative;
-    top:-120px;
+  .column {
+    position: relative;
+    top: -120px;
     justify-content: center;
-    @include mobile(){
-      top:auto;
-      padding:60px 0px;
+    @include mobile() {
+      top: auto;
+      padding: 60px 0px;
     }
-    .column-item{
-      padding:20px;
-      border-radius:5px;
-      background-color:white;
-      width:calc(100% / 3 - 30px);
-      margin-bottom:60px;
-      margin:0px 40px 60px 0px;
-      @include mobile(){
-        margin:0px 0px 40px 0px;
+    .column-item {
+      padding: 20px;
+      border-radius: 5px;
+      background-color: white;
+      width: calc(100% / 3 - 30px);
+      margin-bottom: 60px;
+      margin: 0px 40px 60px 0px;
+      @include mobile() {
+        margin: 0px 0px 40px 0px;
       }
-      &:nth-child(3n+3){
-        margin-right:0px;
+      &:nth-child(3n + 3) {
+        margin-right: 0px;
       }
-      &:last-child{
-        @include mobile(){
-          margin:0px 0px 0px 0px;
+      &:last-child {
+        @include mobile() {
+          margin: 0px 0px 0px 0px;
         }
       }
-      &:nth-child(4){
-        margin-bottom:0px;
+      &:nth-child(4) {
+        margin-bottom: 0px;
       }
-      &:nth-child(5){
-        margin-bottom:0px;
+      &:nth-child(5) {
+        margin-bottom: 0px;
       }
-      h2{
-        font-size:25px;
-        margin-top:0px;
+      h2 {
+        font-size: 25px;
+        margin-top: 0px;
         font-family: "Helvetica Neue";
       }
-      p{
-        font-size:25px;
-        line-height:30px;
+      p {
+        font-size: 25px;
+        line-height: 30px;
       }
     }
   }
 }
 
-#slice-id-peerformance{
-  section{
-    display:flex;
-    justify-content:center;
-    text-align:center;
+#slice-id-peerformance {
+  section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
   }
-  .column{
-    padding:60px 0px;
-    max-width:790px;
-    justify-content:center;
-    @include mobile(){
-      padding:50px 0px;
+  .column {
+    padding: 60px 0px;
+    max-width: 790px;
+    justify-content: center;
+    @include mobile() {
+      padding: 50px 0px;
     }
-    .column-item{
-      &:nth-child(1){
-        width:100%;
-        max-width:700px;
-        margin-bottom:40px;
-        h2{
-          font-size:40px;
-          font-weight:normal;
-          margin:0px;
+    .column-item {
+      &:nth-child(1) {
+        width: 100%;
+        max-width: 700px;
+        margin-bottom: 40px;
+        h2 {
+          font-size: 40px;
+          font-weight: normal;
+          margin: 0px;
         }
-        h3{
-          font-size:40px;
-          font-weight:bold;
-          margin:0px;
+        h3 {
+          font-size: 40px;
+          font-weight: bold;
+          margin: 0px;
         }
       }
-      &:nth-child(2){
-        width:50%;
-        h2{
-          border-bottom:3px solid $blue;
-          padding-bottom:5px;
-          font-size:25px;
+      &:nth-child(2) {
+        width: 50%;
+        h2 {
+          border-bottom: 3px solid $blue;
+          padding-bottom: 5px;
+          font-size: 25px;
         }
-        p{
-          padding-right:30px;
-          padding-top:15px;
-          @include mobile(){
-            padding:0px;
+        p {
+          padding-right: 30px;
+          padding-top: 15px;
+          @include mobile() {
+            padding: 0px;
           }
         }
       }
-      &:nth-child(3){
-        width:50%;
-        border-left:3px solid $blue;
-        @include mobile(){
-          border:0px;
+      &:nth-child(3) {
+        width: 50%;
+        border-left: 3px solid $blue;
+        @include mobile() {
+          border: 0px;
         }
-        h2{
-          border-bottom:3px solid $blue;
-          padding-bottom:5px;
-          font-size:25px;
+        h2 {
+          border-bottom: 3px solid $blue;
+          padding-bottom: 5px;
+          font-size: 25px;
         }
-        p{
-          padding-left:30px;
-          padding-top:15px;
-          @include mobile(){
-            padding:0px;
+        p {
+          padding-left: 30px;
+          padding-top: 15px;
+          @include mobile() {
+            padding: 0px;
           }
         }
       }

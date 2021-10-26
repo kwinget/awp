@@ -1,67 +1,71 @@
-#slice-id-faq-top{
-  .column{
-    padding:60px 0px 30px 0px;
-    border-bottom:2px solid #1E3163;
-    align-items:center;
+#slice-id-faq-top {
+  .column {
+    padding: 60px 0px 30px 0px;
+    border-bottom: 2px solid #1e3163;
+    align-items: flex-end;
   }
-  .column-item{
-    &:nth-child(1){
-      h2{
-        font-size:40px;
-        margin:0px;
-        font-weight:normal;
+  .column-item {
+    &:nth-child(1) {
+      h2 {
+        font-size: 40px;
+        margin: 0px;
+        font-weight: normal;
       }
-      h3{
-        font-size:40px;
-        font-weight:bold;
-        margin:0px 0px 0px 0px;
+      h3 {
+        font-size: 40px;
+        font-weight: bold;
+        margin: 0px 0px 0px 0px;
       }
     }
-    &:nth-child(2){
-      max-width:400px;
+    &:nth-child(2) {
+      max-width: 400px;
+      p {
+        padding: 0px;
+        margin: 0px;
+      }
     }
   }
 }
 
-#slice-id-faq-lower{
-  .column{
-    padding:40px 0px 60px 0px;
-    .column-item{
+#slice-id-faq-lower {
+  .column {
+    padding: 40px 0px 60px 0px;
+    .column-item {
       width: calc(100% / 3 - 15px);
     }
-    h2{
-font-size:23px;
-font-weight:normal;
-line-height:25px;
+    h2 {
+      font-size: 23px;
+      font-weight: normal;
+      line-height: 25px;
     }
-    p{
-      font-size:18px;
-      line-height:21px;
+    p {
+      font-size: 18px;
+      line-height: 21px;
     }
   }
 }
 
-#slice-id-footer-cta{
-  .column{
-    padding:90px 0px;
-    color:white;
+#slice-id-footer-cta {
+  .column {
+    padding: 90px 0px;
+    color: white;
     align-items: center;
-    h3{
-      font-size:40px;
-      margin-bottom:20px;
+    h3 {
+      font-size: 40px;
+      margin-bottom: 20px;
     }
-    p{
-      font-size:18px;
-      margin-bottom:20px;
-      margin-top:0px;
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      margin-top: 0px;
     }
-    a{
+    a {
       @include cta-button-white();
     }
   }
-  .column-item{
-    &:nth-child(2){
-      text-align:right;
+  .column-item {
+    &:nth-child(2) {
+      text-align: right;
     }
   }
 }
