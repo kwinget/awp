@@ -195,7 +195,7 @@ export const Footer = () => {
   return (
     <FooterStyle>
       <Container className="footer-container">
-        <div class="footer-upper-container">
+        <div className="footer-upper-container">
           <Link className="logo" to="/">
             <img src="../../images/FooterLogo.png" alt="logo" />
           </Link>
@@ -207,7 +207,7 @@ export const Footer = () => {
         </div>
       </Container>
       <Container className="footer-container-below">
-        <div class="footer-under-container">
+        <div className="footer-under-container">
           <p>
             1 The publicly-available information provided in and on this website
             is for informational purposes only. It provides business information

@@ -11,7 +11,7 @@ const HeaderStyle = styled.header`
   width: 100%;
   background-size: cover;
   .header-social-container {
-    padding: 18px 0px;
+    padding: 8px 0px;
     @media (max-width: ${variable.tabletWidth}) {
       display: none;
     }
@@ -30,12 +30,12 @@ const HeaderStyle = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 0px;
+    padding-bottom: 0px;
   }
   .logo {
-    max-width: 148px;
-    width: 148px;
+    max-width: 125px;
+    width: 125px;
     img {
       max-width: 100%;
     }

@@ -98,18 +98,18 @@ const PostSlices = ({ slices, id }) => {
 }
 
 const PageStyle = styled.div`
-  max-width: 840px;
+  max-width: 687px;
   margin: 0 auto;
   position: relative;
   padding-bottom: 0px;
-  padding-top: 60px;
+    top: 200px;
+    margin-bottom: 260px;
   .blog-post-container {
     @media (max-width: ${variable.mobileWidth}) {
       flex-direction: column;
     }
     .main-image {
       margin-bottom: 40px;
-      max-width: 471px;
       margin: 0 auto;
       img {
         border-radius: 10px;
@@ -123,8 +123,8 @@ const PageStyle = styled.div`
   }
   h1 {
     font-size: 30px;
-    line-height: 37px;
-    font-weight: 500;
+    line-height: 30px;
+    font-weight: bold;
     text-align: center;
     max-width: 750px;
     margin: 0 auto;
@@ -179,8 +179,8 @@ const PageStyle = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 35px;
-    margin-top: 45px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     .blue-share {
       display: flex;
       align-items: center;
@@ -217,6 +217,8 @@ const PageStyle = styled.div`
     display: flex;
     justify-content: center;
     margin-bottom: 40px;
+    margin-top:20px;
+
     a {
       border: 2px solid ${variable.blue};
       border-radius: 10px;
@@ -224,6 +226,16 @@ const PageStyle = styled.div`
       font-size: 17px;
       line-height: 27px;
       font-weight: 500;
+      color:${variable.blue};
+      position:relative;
+      &:after{
+      content:'';
+      width:100%;
+      border-bottom:3px solid ${variable.blue};
+      position:absolute;
+      bottom:-20px;
+      left:0px;
+    }
       &:hover {
         color: white;
         background-color: ${variable.blue};
@@ -233,6 +245,8 @@ const PageStyle = styled.div`
 `
 
 const BlogHeader = styled.div`
+position:absolute;
+width:100%;
   .blog-header-container {
     min-height: 350px;
     display: flex;
@@ -246,20 +260,6 @@ const BlogHeader = styled.div`
       line-height: 72px;
       margin-bottom: 20px;
     }
-  }
-  position: relative;
-  &:after {
-    width: 100%;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 1) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    height: 100px;
-    position: absolute;
-    bottom: 0px;
-    content: "";
   }
 `
 const Post = props => {
@@ -313,10 +313,10 @@ const Post = props => {
                 </div>
               </div>
               <h1>{node.title.text}</h1>
-              <div class="press-by-line">By: {node.author.text}</div>
+              {/* <div class="press-by-line">By: {node.author.text}</div> */}
               <div class="read-article">
                 <a href={node.article_link.url} target="_blank">
-                  Read the Article in {node.article_site_name.text}
+                  Read the Article
                 </a>
               </div>
               {node.body && <PostSlices slices={node.body} />}

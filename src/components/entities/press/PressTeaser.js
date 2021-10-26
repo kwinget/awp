@@ -18,6 +18,7 @@ const BlogPostTeaserStyle = styled.article`
       line-height: 27px;
       font-weight: 400;
       margin: 35px 0px 0px 0px;
+      color: ${variable.blue};
     }
   }
   p {
@@ -31,15 +32,21 @@ const BlogPostTeaserStyle = styled.article`
   }
   .cta-button {
     font-size: 14px;
-    color: ${variable.blueCta};
+    color: ${variable.blue};
   }
   .blog-teaser-image-container {
     height: 200px;
     width: 100%;
     margin-bottom: 20px;
-    background-color: #f4f7f9;
-    padding: 60px;
-    border-radius: 20px;
+    .gatsby-image-wrapper{
+
+&:before{
+  border-radius:5px;
+}
+&:after{
+  border-radius:5px;
+}
+}
   }
   .gatsby-image-wrapper {
     width: 100%;

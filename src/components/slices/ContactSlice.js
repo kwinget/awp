@@ -16,6 +16,19 @@ const ContactStyle = styled.div`
   .contact-top-copy{
     max-width:520px;
     text-align:center;
+    a{
+      color: white;
+  padding: 9px 30px;
+  border-radius: 5px;
+  border:2px solid white;
+  font-size: 18px;
+  font-weight:bold;
+  display: inline-block;
+  &:hover {
+    background: white;
+    color:${variable.blue};
+  }
+    }
     h2{
       font-size:40px;
       margin:0px;
@@ -204,7 +217,9 @@ export const ContactSlice = ({ slice }) => {
             <div class="contact-top-copy">
             <h2>Invest in more.</h2>
             <h3>Join our fund.</h3>
-            <p>Reach out to schedule a meeting with our team, learn about our investments, and join our fund.</p>
+            <p>If you’re ready to get started, schedule an introductory meeting with our team:</p>
+            <a href="tel:214.799.6977">Schedule a Meeting</a>
+            <p>Or reach out to us by sending a message.</p>
             </div>
             <form
               name="contact"
@@ -242,17 +257,6 @@ export const ContactSlice = ({ slice }) => {
               <input type="submit" className="contact-submit" value="Send Message" />
               </div>
             </form>
-            <div class="contact-copy-bottom">
-            <h2>Or reach us by:</h2>
-            <div className="contact-phone2">
-              <div>Phone</div>
-              <div>214.799.6977</div>
-            </div>
-            <div className="contact-email2">
-              <div>Email:</div>
-              <div>k.winget@alternativewealthpartners.com</div>
-            </div>
-            </div>
           </div>
         </div>
       </ContactStyle>

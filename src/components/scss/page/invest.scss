@@ -99,6 +99,10 @@
 
 
 #slice-id-points{
+  max-height: 820px;
+  @include tablet(){
+    max-height:100%;
+  }
   .column{
     position:relative;
     top:-120px;
