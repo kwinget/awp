@@ -17,7 +17,7 @@
 
 #slice-id-start-inveesting {
   .column {
-    padding: 60px 0px 0px 0px;
+    padding: 60px 0px 60px 0px;
     p {
       font-size: 20px;
       line-height: 25px;
@@ -32,11 +32,11 @@
           background: rgb(255, 255, 255);
           background: linear-gradient(
             180deg,
-            rgba(255, 255, 255, 1) 60%,
-            rgba(255, 255, 255, 0) 100%
+            rgba(255, 255, 255, 1) 50%,
+            rgba(255, 255, 255, 0) 70%
           );
           border-radius: 50%;
-          position: relative;
+          position: absolute;
           top: -250px;
           padding: 85px;
           width: 600px;
