@@ -102,7 +102,7 @@ const PageStyle = styled.div`
   margin: 0 auto;
   position: relative;
   top: 200px;
-  margin-bottom:260px;
+  margin-bottom: 260px;
   padding-bottom: ${variable.sectionPadding};
   .blog-post-container {
     @media (max-width: ${variable.mobileWidth}) {
@@ -126,7 +126,7 @@ const PageStyle = styled.div`
     line-height: 30px;
     margin-bottom: 40px;
     font-weight: bold;
-    text-align:center;
+    text-align: center;
   }
   h2 {
     margin-bottom: 0px;
@@ -174,7 +174,7 @@ const PageStyle = styled.div`
     height: 3px;
     background-color: ${variable.blue};
     margin-bottom: 40px;
-    margin:0px auto 40px auto;
+    margin: 0px auto 40px auto;
   }
   .two-leaves {
     text-align: center;
@@ -238,7 +238,7 @@ const Post = props => {
   // const defaultBlock = props.data.prismic.allBlocks.edges[0].node
   // const site = props.data.prismic.allSite_informations.edges[0].node
   const shareUrl =
-    "https://bluemountainbest.netlify.app/blog/" + props.data.page.uid
+    "https://alternativewealthpartners.com/blog/" + props.data.page.uid
   return (
     <Layout>
       <SEO site={site} page={props.data.page}></SEO>
