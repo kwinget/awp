@@ -53,6 +53,7 @@
     flex-direction: column;
     align-items: center;
     .column-item {
+      width: 100% !important;
       &:nth-child(1) {
         width: 100%;
         text-align: center;
@@ -72,15 +73,22 @@
         margin-top: 40px;
         @include mobile() {
           padding: 40px 20px;
+          width: 100% !important;
         }
         .column-item-inner {
           display: flex;
           align-items: center;
           justify-content: space-between;
+          @include mobile() {
+            flex-direction: column;
+          }
           ul {
             width: calc(63% - 70px);
             margin: 0px;
             padding: 0px;
+            @include mobile() {
+              width: 100%;
+            }
             li {
               list-style: none;
               margin: 20px 0px;
@@ -92,6 +100,9 @@
         .block-img {
           width: 100%;
           width: 37%;
+          @include mobile() {
+            width: 100%;
+          }
           img {
             width: 100%;
             height: auto;
