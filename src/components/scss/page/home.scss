@@ -319,6 +319,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      @include mobile() {
+        margin-bottom: 0px;
+      }
     }
     .block-img {
       text-align: center;
