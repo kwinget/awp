@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import { StaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import * as variable from "../components/variables"
+import Img from "gatsby-image"
 
 const MobileContainer = styled.div`
   .menu-container {
@@ -32,6 +33,7 @@ const MobileContainer = styled.div`
     padding: 0px;
     list-style: none;
     text-align: left;
+
     &:focus {
       outline: none !important;
     }
@@ -173,6 +175,12 @@ const MenuWrapper = styled.div`
     padding: 0px;
     list-style: none;
     text-align: left;
+    &:nth-child(6) {
+      width: 30px;
+      height: auto;
+      img {
+      }
+    }
     &:focus {
       outline: none !important;
     }
@@ -198,6 +206,65 @@ const MenuWrapper = styled.div`
     }
   }
 `
+
+function menuRender(menuitem, linkedin) {
+  if (
+    menuitem.items[0].sub_nav_link_label.text != "" &&
+    menuitem.items[0].sub_nav_link_label.text != "Dummy"
+  ) {
+    return (
+      <div>
+        <Link to={menuitem.primary.link.url}>
+          {menuitem.primary.label.text}
+        </Link>
+        <div className="sub-menu">
+          {menuitem.items.map((submenuitem, index) => (
+            <div key={index}>
+              {submenuitem.sub_nav_link.url && (
+                <Link to={submenuitem.sub_nav_link.url}>
+                  {submenuitem.sub_nav_link_label.text}
+                </Link>
+              )}
+              {submenuitem.relative_link.text && (
+                <Link to={submenuitem.relative_link.text}>
+                  {submenuitem.sub_nav_link_label.text}
+                </Link>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  } else {
+    if (menuitem.primary.link.url != "") {
+      if (menuitem.primary.label.text == "LinkedIn") {
+        return (
+          <Link to={menuitem.primary.link.url} target="_blank">
+            <Img fluid={linkedin} />
+          </Link>
+        )
+      } else {
+        return (
+          <Link to={menuitem.primary.link.url}>
+            {menuitem.primary.label.text}
+          </Link>
+        )
+      }
+      return (
+        <Link to={menuitem.primary.link.url}>
+          {menuitem.primary.label.text}
+        </Link>
+      )
+    }
+    if (menuitem.primary.relative_link) {
+      return (
+        <Link to={menuitem.primary.relative_link.text}>
+          {menuitem.primary.label.text}
+        </Link>
+      )
+    }
+  }
+}
 
 const SubMenuReturn = ({ submenuitem, index }) => {
   if (
@@ -243,7 +310,15 @@ class Mobilemenu extends React.Component {
       <StaticQuery
         query={graphql`
           query {
-            allPrismicSiteInformation {
+            linkedin: file(name: { eq: "linkedinawp" }) {
+              name
+              childImageSharp {
+                fluid(maxWidth: 400) {
+                  ...GatsbyImageSharpFluid_withWebp_tracedSVG
+                }
+              }
+            }
+            site: allPrismicSiteInformation {
               nodes {
                 data {
                   nav {
@@ -291,7 +366,7 @@ class Mobilemenu extends React.Component {
         `}
         render={data => (
           <>
-            {console.log(data)}
+            {console.log(data.site.nodes[0].data)}
             <div id="mobile-menu-header">
               <div className="menu-container">
                 <MenuToggle
@@ -319,48 +394,14 @@ class Mobilemenu extends React.Component {
                       Home
                     </Link>
                   </li>
-                  {data.allPrismicSiteInformation.nodes[0].data.nav.map(
-                    (menuitem, index) => (
-                      <li key={menuitem.id}>
-                        {menuitem.primary.link.url && (
-                          <Link
-                            activeStyle={{ color: variable.blue }}
-                            to={menuitem.primary.link.url}
-                            onClick={() => this.toggleMenu()}
-                            activeClassName="active"
-                            activeStyle={activeStyle}
-                          >
-                            {menuitem.primary.label.text}
-                          </Link>
-                        )}
-                        {!menuitem.primary.link.url && (
-                          <Link
-                            activeStyle={{ color: variable.blue }}
-                            to={menuitem.primary.relative_link.text}
-                            onClick={() => this.toggleMenu()}
-                            activeClassName="active"
-                            activeStyle={activeStyle}
-                          >
-                            {menuitem.primary.label.text}
-                          </Link>
-                        )}
-                        {menuitem.items[0].sub_nav_link && (
-                          <ul className="sub-menu">
-                            {menuitem.items.map((submenuitem, index) => {
-                              if (submenuitem.id) {
-                                return (
-                                  <SubMenuReturn
-                                    submenuitem={submenuitem}
-                                    index={index}
-                                  />
-                                )
-                              }
-                            })}
-                          </ul>
-                        )}
-                      </li>
-                    )
-                  )}
+                  {data.site.nodes[0].data.nav.map((menuitem, index) => (
+                    <li key={index}>
+                      {menuRender(
+                        menuitem,
+                        data.linkedin.childImageSharp.fluid
+                      )}
+                    </li>
+                  ))}
                 </ul>
               </div>
             </MenuWrapper>
