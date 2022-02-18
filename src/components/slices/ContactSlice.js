@@ -220,10 +220,7 @@ export const ContactSlice = ({ slice }) => {
                 If you’re ready to get started, schedule an introductory meeting
                 with our team:
               </p>
-              <a
-                target="_blank"
-                href="https://app.squarespacescheduling.com/schedule.php?owner=24260179 "
-              >
+              <a target="_blank" href="https://calendly.com/awp-kelly">
                 Schedule a Meeting
               </a>
               <p>Or reach out to us by sending a message.</p>

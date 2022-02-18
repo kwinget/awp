@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import * as variable from "../variables"
 import MobileMenu from "../mobileMenu"
+
 const HeaderStyle = styled.header`
   z-index: 2;
   width: 100%;
@@ -56,6 +57,12 @@ const HeaderStyle = styled.header`
       margin-right: 30px;
       position: relative;
       &:nth-child(5) {
+.gatsby-image-wrapper{
+  width:30px;
+  height:auto;
+}
+      }
+      &:nth-child(6) {
         margin-right:15px;
         a {
           color: ${variable.blue};
@@ -145,7 +152,7 @@ const activeStyle = {
   color: variable.blue,
 }
 
-function menuRender(menuitem) {
+function menuRender(menuitem, linkedin) {
   if (
     menuitem.items[0].sub_nav_link_label.text != "" &&
     menuitem.items[0].sub_nav_link_label.text != "Dummy"
@@ -175,6 +182,19 @@ function menuRender(menuitem) {
     )
   } else {
     if (menuitem.primary.link.url != "") {
+      if (menuitem.primary.label.text == "LinkedIn") {
+        return (
+          <Link to={menuitem.primary.link.url} target="_blank">
+            <Img fluid={linkedin} />
+          </Link>
+        )
+      } else {
+        return (
+          <Link to={menuitem.primary.link.url}>
+            {menuitem.primary.label.text}
+          </Link>
+        )
+      }
       return (
         <Link to={menuitem.primary.link.url}>
           {menuitem.primary.label.text}
@@ -194,6 +214,14 @@ function menuRender(menuitem) {
 export const Header = () => {
   const data = useStaticQuery(graphql`
     query menu {
+      linkedin: file(name: { eq: "linkedinawp" }) {
+        name
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          }
+        }
+      }
       site: allPrismicSiteInformation {
         nodes {
           data {
@@ -254,7 +282,9 @@ export const Header = () => {
         <div className="mobile-menu-container">{<MobileMenu />}</div>
         <ul className="main-menu">
           {nav.map((menuitem, index) => (
-            <li key={index}>{menuRender(menuitem)}</li>
+            <li key={index}>
+              {menuRender(menuitem, data.linkedin.childImageSharp.fluid)}
+            </li>
           ))}
         </ul>
       </Container>

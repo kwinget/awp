@@ -310,3 +310,22 @@
     text-align: center;
   }
 }
+#slice-id-partners {
+  .column {
+    padding: 50px 0px;
+    max-width: 800px;
+    margin: 0 auto;
+    .column-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .block-img {
+      text-align: center;
+    }
+    img {
+      max-width: 150px;
+      height: auto;
+    }
+  }
+}
