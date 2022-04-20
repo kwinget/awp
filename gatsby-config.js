@@ -5,10 +5,10 @@ const linkResolver = require("./src/utils/linkResolver")
 
 module.exports = {
   siteMetadata: {
-    title: `MassiveT herapeutics`,
+    title: `Alternative Wealth Partners`,
     description: `Description. Change me.`,
     author: `Alexander Fountain`,
-    siteUrl: `https://www.massivetherapeutics.com`,
+    siteUrl: `https://www.alternativewealthpartners.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,10 +19,19 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        trackingIds: [
+          "UA-226359251-1", // Google Analytics / GA
+        ],
+      },
+    },
+    {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: "https://www.massivetherapeutics.com",
-        sitemap: "https://www.massivetherapeutics.com/sitemap.xml",
+        host: "https://www.alternativewealthpartners.com",
+        sitemap: "https://www.alternativewealthpartners.com/sitemap.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
@@ -102,7 +111,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-sass",
       options: {
-        implementation: require('sass'),
+        implementation: require("sass"),
         data: '@import "variables.scss"; @import "mixins.scss";',
         includePaths: ["src/components/scss"],
       },
