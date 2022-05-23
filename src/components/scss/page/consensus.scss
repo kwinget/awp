@@ -153,6 +153,9 @@ a{
   .column-item {
     &:nth-child(2) {
       text-align: right;
+      @include mobilesmall(){
+        text-align:left;
+      }
     }
   }
 }
