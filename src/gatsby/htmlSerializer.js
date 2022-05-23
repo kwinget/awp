@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-
-
+import ResponsiveEmbed from "react-responsive-embed"
 
 const linkResolver = (doc, content, linkClass) => {
   // Route for blog posts
@@ -35,9 +34,24 @@ const linkResolver = (doc, content, linkClass) => {
 }
 
 const htmlSerializer = (type, element, content, children) => {
-  var link = ''
+  var link = ""
   switch (type) {
-    case "hyperlink": 
+    case "embed":
+      var video_id = element.oembed.embed_url.split("v=")[1]
+      var ampersandPosition = video_id.indexOf("&")
+      if (ampersandPosition !== -1) {
+        video_id = video_id.substring(0, ampersandPosition)
+      }
+
+      return (
+        <div className="video-container">
+          <ResponsiveEmbed
+            src={"https://www.youtube.com/embed/" + video_id}
+            allowFullScreen
+          />
+        </div>
+      )
+    case "hyperlink":
       if (element.data.link_type == "Document") {
         if (children[0].props != null) {
           var linkClass = children[0].props.className
@@ -49,19 +63,28 @@ const htmlSerializer = (type, element, content, children) => {
         link = linkResolver(element.data, content, linkClass)
       }
       return link
-    case "image": 
-      const width =  element.dimensions.width ? element.dimensions.width : ""
-      const height =  element.dimensions.height ? element.dimensions.height : ""
-      const alt =  element.alt ? element.alt : ""
-      if(element.url){
+    case "image":
+      const width = element.dimensions.width ? element.dimensions.width : ""
+      const height = element.dimensions.height ? element.dimensions.height : ""
+      const alt = element.alt ? element.alt : ""
+      console.log(element)
+      if (element.url && element.linkTo) {
         return (
           <p className="block-img">
-          <img src={element.url} width={width} height={height} alt={alt} />
+            <a href={element.linkTo.url}>
+              <img src={element.url} width={width} height={height} alt={alt} />
+            </a>
           </p>
         )
       }
-      else{
-        return ''
+      if (element.url && !element.linkTo) {
+        return (
+          <p className="block-img">
+            <img src={element.url} width={width} height={height} alt={alt} />
+          </p>
+        )
+      } else {
+        return ""
       }
     // First differentiate between a label and a preformatted field (e.g. the Code Block slice)
     default: {

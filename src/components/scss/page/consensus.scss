@@ -1,0 +1,158 @@
+#consensus{
+  header{
+    display:none;
+  }
+}
+#slice-id-consensus-header {
+  .column{
+    align-items:center;
+    .column-item{
+      display:flex;
+      width:50% !important;
+      &:nth-child(1){
+        justify-content:flex-start;
+        img{
+          max-width: 125px;
+          width: 125px;
+          height:auto;
+        }
+        .block-img{
+          padding:0px;
+          margin:0px;
+        }
+      }
+      &:nth-child(2){
+        justify-content:flex-end;
+        a{
+          @include cta-button();
+        }
+      }
+    }
+  }
+}
+#slice-id-consensus-hero {
+  position: relative;
+  &:after {
+    content: "";
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    bottom: -20px;
+    right: calc(50% - 20px);
+  }
+  section {
+    padding: 125px 0px;
+    @include mobile() {
+      padding: 60px 0px;
+    }
+    .section-content {
+      max-width: 550px;
+      text-align: center;
+      color: white;
+      margin: 0 auto;
+      p {
+        margin-bottom: 0px;
+      }
+      h2 {
+        font-size: 40px;
+        font-weight: bold;
+        margin: 0px;
+      }
+      h3 {
+        font-size: 40px;
+        margin: 0px;
+      }
+    }
+  }
+}
+
+#slice-id-consensus-investor{
+  .column{
+    align-items:center;
+    padding:140px 0px;
+    @include mobile(){
+      padding:40px 0px;
+    }
+    .column-item{
+      &:nth-child(1){
+        width:35%;
+      }
+      &:nth-child(2){
+        width:55%;
+      }
+    }
+  }
+  h2{
+    font-size:40px;
+    font-weight:bold;
+  }
+  p{
+    font-size:20px;
+  }
+}
+
+#slice-id-consensus-convo{
+  .section-content{
+    padding:100px 0px;
+text-align:center;
+display:flex;
+flex-direction:column;
+align-items:center;
+h2{
+  font-size:40px;
+  font-weight:bold;
+  max-width:540px;
+}
+p{
+  font-size:20px;
+  max-width:680px;
+  margin:5px 0px;
+}
+a{
+  @include cta-button()
+}
+
+  }
+}
+
+
+#slice-id-consensus-footer {
+  .column {
+    padding: 90px 0px;
+    color: white;
+    align-items: center;
+    h3 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 20px;
+      margin-top: 0px;
+      &.block-img{
+        float:left;
+        margin-right:15px;
+        margin-top:20px;
+        img{
+          width:42px;
+          height:42px;
+        }
+      }
+    }
+    .column-item{
+      &:nth-child(2){
+        a {
+          @include cta-button-white();
+        }
+      }
+    }
+
+  }
+  .column-item {
+    &:nth-child(2) {
+      text-align: right;
+    }
+  }
+}

@@ -7,6 +7,7 @@ import "../components/scss/page/home.scss"
 import "../components/scss/page/invest.scss"
 import "../components/scss/page/about.scss"
 import "../components/scss/page/contact.scss"
+import "../components/scss/page/consensus.scss"
 import SEO from "../components/seo"
 import { ReactTypeformEmbed } from "react-typeform-embed"
 
@@ -228,7 +229,7 @@ export const postQuery = graphql`
               left_icon {
                 localFile {
                   childImageSharp {
-                    fixed(width:41, height:41) {
+                    fixed(width: 41, height: 41) {
                       ...GatsbyImageSharpFixed
                     }
                   }
@@ -237,7 +238,7 @@ export const postQuery = graphql`
               right_icon {
                 localFile {
                   childImageSharp {
-                    fixed(width:41, height:41) {
+                    fixed(width: 41, height: 41) {
                       ...GatsbyImageSharpFixed
                     }
                   }
