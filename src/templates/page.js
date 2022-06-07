@@ -8,6 +8,7 @@ import "../components/scss/page/invest.scss"
 import "../components/scss/page/about.scss"
 import "../components/scss/page/contact.scss"
 import "../components/scss/page/consensus.scss"
+import "../components/scss/page/femcoin.scss"
 import SEO from "../components/seo"
 import { ReactTypeformEmbed } from "react-typeform-embed"
 
