@@ -91,6 +91,9 @@
   p{
     font-size:20px;
   }
+  img{
+    height:auto;
+  }
 }
 
 #slice-id-consensus-convo{
@@ -117,6 +120,13 @@ a{
   }
 }
 
+#slice-id-femcoin-social{
+  .column-item{
+    .block-img{
+      text-align:center;
+    }
+  }
+}
 
 #slice-id-consensus-footer {
   .column {
